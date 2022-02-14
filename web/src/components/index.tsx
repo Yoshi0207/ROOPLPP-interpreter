@@ -45,7 +45,7 @@ function App() {
       const response = await getFire(HOSTNAME + '/load.php', { hash: hash });
       setProgram(response.data[0]);
     } catch (err) {
-      setProgram(err);
+      setProgram(err as string);
     }
   }
 
@@ -73,7 +73,7 @@ function App() {
         });
         setResult(response.data[0]);
       } catch (err) {
-        setResult(err);
+        setResult(err as string);
       }
       setIsResultOpen(true);
     },
@@ -89,7 +89,7 @@ function App() {
         const response = await getFire(HOSTNAME + '/example.php', { filename: algorithmSrc });
         setProgram(response.data[0]);
       } catch (err) {
-        setProgram(err);
+        setProgram(err as string);
       }
     },
     []
@@ -291,6 +291,7 @@ function App() {
           readOnly={true}
           value={result}
           className="background-color-white"
+          aria-label='result'
         />
       </div>
     </>
