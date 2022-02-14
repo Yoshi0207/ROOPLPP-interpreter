@@ -61,7 +61,6 @@ mkdir programs
 + ディレクトリprogramsのアクセス権を変更
 
 ```
-mkdir program
 chmod 777 programs
 ```
 
